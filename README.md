@@ -23,3 +23,15 @@ luego hacemos los mismo pero en el directrio simulation_wr
 
 
 *los comandos colcon sirven para agrupar y compilar los codigos escrito(trabajo en ROS)
+
+luego de los de ejecutar los comandos en ambas areas de trabajo tenremos nuevas carpetas que se crearon una de estas se llama bundle
+dentro de esta se encuentra un .tar llamado output .tar el cual debemos mover a un AWS s3 (bucket) para esto hacemos
+
+estando en robot_wr
+
+            aws s3 cp bundle/output.tar s3://nombre_bucket/nuevo_nombre_para_identificar.tar
+            
+estando en simulation_wr
+
+            aws s3 cp bundle/output.tar s3://nombre_bucket/nuevo_nombre_para_identificar.tar
+
